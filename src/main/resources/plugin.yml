@@ -1,0 +1,15 @@
+name: MidoriDeathLocator
+version: 1.0
+main: midorichan.DeathLocator
+api-version: 1.18
+author: midorichan
+website: https://twitter.com/Midorichaan2525
+
+commands:
+  death:
+    description: Death Location Command
+
+permissions:
+  midorideath.command:
+    description: permission
+    default: op
