@@ -26,12 +26,12 @@ public class playerDeath implements Listener {
             Player p = (Player) entity;
             Location loc = p.getLocation();
             String[] msg = {
-                    " §2-------------|" + " §DeathLocation " + "§2|-------------",
+                    " §2-------------|" + " §aDeathLocation " + "§2|-------------",
                     "   World: " + loc.getWorld().getName(),
                     "   X: " + loc.getX(),
                     "   Y: " + loc.getY(),
                     "   Z: " + loc.getZ(),
-                    " §2------------------------------------"
+                    " §2---------------------------------------"
             };
 
             p.sendMessage(msg);

@@ -33,12 +33,12 @@ public class deathCommand implements CommandExecutor {
                         if (data.containsKey(p.getUniqueId())) {
                             Location loc = data.get(p.getUniqueId());
                             String[] msg = {
-                                    " §2-------------|" + " §DeathLocation " + "§2|-------------",
+                                    " §2-------------|" + " §aDeathLocation " + "§2|-------------",
                                     "   World: " + loc.getWorld().getName(),
                                     "   X: " + loc.getX(),
                                     "   Y: " + loc.getY(),
                                     "   Z: " + loc.getZ(),
-                                    " §2------------------------------------"
+                                    " §2---------------------------------------"
                             };
                             p.sendMessage(msg);
                             return true;
@@ -58,12 +58,12 @@ public class deathCommand implements CommandExecutor {
                         if (data.containsKey(target.getUniqueId())) {
                             Location loc = data.get(target.getUniqueId());
                             String[] msg = {
-                                    " §2-------------|" + " §DeathLocation " + "§2|-------------",
+                                    " §2-------------|" + " §aDeathLocation " + "§2|-------------",
                                     "   World: " + loc.getWorld().getName(),
                                     "   X: " + loc.getX(),
                                     "   Y: " + loc.getY(),
                                     "   Z: " + loc.getZ(),
-                                    " §2------------------------------------"
+                                    " §2---------------------------------------"
                             };
                             p.sendMessage(msg);
                             return true;
@@ -80,12 +80,12 @@ public class deathCommand implements CommandExecutor {
                         if (data.containsKey(p.getUniqueId())) {
                             Location loc = data.get(p.getUniqueId());
                             String[] msg = {
-                                    " §2-------------|" + " §DeathLocation " + "§2|-------------",
+                                    " §2-------------|" + " §aDeathLocation " + "§2|-------------",
                                     "   World: " + loc.getWorld().getName(),
                                     "   X: " + loc.getX(),
                                     "   Y: " + loc.getY(),
                                     "   Z: " + loc.getZ(),
-                                    " §2------------------------------------"
+                                    " §2---------------------------------------"
                             };
                             p.sendMessage(msg);
                             return true;
