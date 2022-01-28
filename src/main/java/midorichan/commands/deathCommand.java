@@ -59,6 +59,7 @@ public class deathCommand implements CommandExecutor {
                             Location loc = data.get(target.getUniqueId());
                             String[] msg = {
                                     " §2-------------|" + " §aDeathLocation " + "§2|-------------",
+                                    "   Player: " + target.getName(),
                                     "   World: " + loc.getWorld().getName(),
                                     "   X: " + loc.getX(),
                                     "   Y: " + loc.getY(),
