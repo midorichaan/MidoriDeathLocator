@@ -12,4 +12,7 @@ commands:
 permissions:
   midorideath.command:
     description: permission
+    default: true
+  midorideath.command.admin:
+    description: admin perm
     default: op

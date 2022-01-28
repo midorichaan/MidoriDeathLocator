@@ -28,74 +28,79 @@ public class deathCommand implements CommandExecutor {
 
             Player p = (Player) sender;
             if (p.isOp() || p.hasPermission("midorideath.command")) {
-                if (args.length == 0) {
-                    if (data.containsKey(p.getUniqueId())) {
-                        Location loc = data.get(p.getUniqueId());
-                        String[] msg = {
-                                " §2-------------|" + " §DeathLocation " + "§2|-------------",
-                                "   World: " + loc.getWorld().getName(),
-                                "   X: " + loc.getX(),
-                                "   Y: " + loc.getY(),
-                                "   Z: " + loc.getZ(),
-                                " §2------------------------------------"
-                        };
-                        p.sendMessage(msg);
-                        return true;
-                    } else {
-                        p.sendMessage(plugin.getPrefix() + "まだデータがありません");
-                        return true;
-                    }
-                } else if (args.length == 1) {
-                    String tar = args[0];
-                    Player target = Bukkit.getPlayer(tar);
+                if (p.isOp() || p.hasPermission("midorideath.command.admin")) {
+                    if (args.length == 0) {
+                        if (data.containsKey(p.getUniqueId())) {
+                            Location loc = data.get(p.getUniqueId());
+                            String[] msg = {
+                                    " §2-------------|" + " §DeathLocation " + "§2|-------------",
+                                    "   World: " + loc.getWorld().getName(),
+                                    "   X: " + loc.getX(),
+                                    "   Y: " + loc.getY(),
+                                    "   Z: " + loc.getZ(),
+                                    " §2------------------------------------"
+                            };
+                            p.sendMessage(msg);
+                            return true;
+                        } else {
+                            p.sendMessage(plugin.getPrefix() + "まだデータがありません");
+                            return true;
+                        }
+                    } else if (args.length == 1) {
+                        String tar = args[0];
+                        Player target = Bukkit.getPlayer(tar);
 
-                    if (target == null) {
-                        p.sendMessage(plugin.getPrefix() + "プレイヤー " + tar + " は存在しません");
-                        return true;
-                    }
+                        if (target == null) {
+                            p.sendMessage(plugin.getPrefix() + "プレイヤー " + tar + " は存在しません");
+                            return true;
+                        }
 
-                    if (data.containsKey(target.getUniqueId())) {
-                        Location loc = data.get(target.getUniqueId());
-                        String[] msg = {
-                                " §2-------------|" + " §DeathLocation " + "§2|-------------",
-                                "   World: " + loc.getWorld().getName(),
-                                "   X: " + loc.getX(),
-                                "   Y: " + loc.getY(),
-                                "   Z: " + loc.getZ(),
-                                " §2------------------------------------"
-                        };
-                        p.sendMessage(msg);
-                        return true;
+                        if (data.containsKey(target.getUniqueId())) {
+                            Location loc = data.get(target.getUniqueId());
+                            String[] msg = {
+                                    " §2-------------|" + " §DeathLocation " + "§2|-------------",
+                                    "   World: " + loc.getWorld().getName(),
+                                    "   X: " + loc.getX(),
+                                    "   Y: " + loc.getY(),
+                                    "   Z: " + loc.getZ(),
+                                    " §2------------------------------------"
+                            };
+                            p.sendMessage(msg);
+                            return true;
+                        } else {
+                            p.sendMessage(plugin.getPrefix() + "データが存在しません");
+                            return true;
+                        }
                     } else {
-                        p.sendMessage(plugin.getPrefix() + "データが存在しません");
+                        p.sendMessage(plugin.getPrefix() + "引数が不正です");
                         return true;
                     }
                 } else {
-                    p.sendMessage(plugin.getPrefix() + "引数が不正です");
-                    return true;
+                    if (args.length == 0) {
+                        if (data.containsKey(p.getUniqueId())) {
+                            Location loc = data.get(p.getUniqueId());
+                            String[] msg = {
+                                    " §2-------------|" + " §DeathLocation " + "§2|-------------",
+                                    "   World: " + loc.getWorld().getName(),
+                                    "   X: " + loc.getX(),
+                                    "   Y: " + loc.getY(),
+                                    "   Z: " + loc.getZ(),
+                                    " §2------------------------------------"
+                            };
+                            p.sendMessage(msg);
+                            return true;
+                        } else {
+                            p.sendMessage(plugin.getPrefix() + "まだデータがありません");
+                            return true;
+                        }
+                    } else {
+                        p.sendMessage(plugin.getPrefix() + "権限がありません");
+                        return true;
+                    }
                 }
             } else {
-                if (args.length == 0) {
-                    if (data.containsKey(p.getUniqueId())) {
-                        Location loc = data.get(p.getUniqueId());
-                        String[] msg = {
-                                " §2-------------|" + " §DeathLocation " + "§2|-------------",
-                                "   World: " + loc.getWorld().getName(),
-                                "   X: " + loc.getX(),
-                                "   Y: " + loc.getY(),
-                                "   Z: " + loc.getZ(),
-                                " §2------------------------------------"
-                        };
-                        p.sendMessage(msg);
-                        return true;
-                    } else {
-                        p.sendMessage(plugin.getPrefix() + "まだデータがありません");
-                        return true;
-                    }
-                } else {
-                    p.sendMessage(plugin.getPrefix() + "権限がありません");
-                    return true;
-                }
+                p.sendMessage(plugin.getPrefix() + "権限がありません");
+                return true;
             }
         }
         return true;
