@@ -1,5 +1,5 @@
 name: MidoriDeathLocator
-version: 1.2
+version: 1.3
 main: midorichan.DeathLocator
 api-version: 1.18
 author: midorichan
@@ -7,12 +7,38 @@ website: https://twitter.com/Midorichaan2525
 
 commands:
   death:
-    description: Death Location Command
+    description: Displays the last death location
+    usage: /death [Player/OfflinePlayer]
+  deathtp:
+    description: Teleport to last death location
+    usage: /deathtp [Player/OfflinePlayer]
 
 permissions:
-  midorideath.command:
-    description: permission
-    default: true
-  midorideath.command.admin:
-    description: admin perm
+  midorideath.*:
     default: op
+    description: all permission
+    children:
+      midorideath.command: true
+  midorideath.command:
+    description: command permission
+    default: op
+    children:
+      midorideath.command.tp: true
+      midorideath.command.tp.admin: true
+      midorideath.command.death: true
+      midorideath.command.death.admin: true
+  midorideath.command.death:
+    description: /death perm
+    default: true
+  midorideath.command.death.admin:
+    description: /death <arg> perm
+    default: op
+  midorideath.command.tp:
+    description: permission
+    default: op
+  midorideath.command.tp.admin:
+    description: perm
+    default: op
+  midorideath.notify:
+    description: notify location
+    default: true

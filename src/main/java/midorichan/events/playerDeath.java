@@ -34,7 +34,9 @@ public class playerDeath implements Listener {
                     " §2---------------------------------------"
             };
 
-            p.sendMessage(msg);
+            if (p.hasPermission("midorideath.notify")) {
+                p.sendMessage(msg);
+            }
             data.put(p.getUniqueId(), loc);
         }
     }

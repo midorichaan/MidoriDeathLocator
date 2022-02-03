@@ -1,6 +1,7 @@
 package midorichan;
 
 import midorichan.commands.deathCommand;
+import midorichan.commands.deathTpCommand;
 import midorichan.events.playerDeath;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -35,6 +36,7 @@ public final class DeathLocator extends JavaPlugin {
 
         //Register Command
         Bukkit.getPluginCommand("death").setExecutor(new deathCommand());
+        Bukkit.getPluginCommand("deathtp").setExecutor(new deathTpCommand());
 
         this.getLogger().info(prefix + "Enabled MidoriDeathLocator");
     }
