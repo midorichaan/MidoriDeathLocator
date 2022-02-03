@@ -19,6 +19,7 @@ permissions:
     description: all permission
     children:
       midorideath.command: true
+      midorideath.notify: true
   midorideath.command:
     description: command permission
     default: op
